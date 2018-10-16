@@ -1,0 +1,4 @@
+while read -r value 
+do
+mysql -N -h <hostname>  -u <username>  -p<password> -A -e "set @param=$value ;source ./identity_scripts/customer.sql;" >>output.csv
+done<input.txt
